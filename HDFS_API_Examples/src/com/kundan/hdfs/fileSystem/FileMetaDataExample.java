@@ -11,7 +11,7 @@ import org.apache.hadoop.fs.Path;
 public class FileMetaDataExample {
 	
 	public static void main(String[] args) throws IOException {
-		String uri="/user/root/";
+		String uri="hdfs://172.17.0.2:8020/user/root/foo.txt";
 		Path path= new Path(uri);
 		Configuration conf = new Configuration();
 		FileSystem fs = FileSystem.get(URI.create(uri),conf);
@@ -34,7 +34,6 @@ public class FileMetaDataExample {
 		for(FileStatus file: filesList){
 			System.out.println(file.getPath());
 		}
-		
 
 	}
 
